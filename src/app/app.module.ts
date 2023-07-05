@@ -1,16 +1,42 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+// Modulos
 import { AppRoutingModule } from './app-routing.module';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
+
+//Componentes
 import { AppComponent } from './app.component';
+import { InicioComponent } from './component/inicio/inicio.component';
+import { BienvenidaComponent } from './component/inicio/bienvenida/bienvenida.component';
+import { LoginComponent } from './component/inicio/login/login.component';
+import { RegisterComponent } from './component/inicio/register/register.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { NavbarComponent } from './component/dashboard/navbar/navbar.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InicioComponent,
+    BienvenidaComponent,
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]
