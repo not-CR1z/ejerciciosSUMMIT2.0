@@ -1,0 +1,39 @@
+    <div class="col-lg-6 offset-lg-3">
+        <h3 class="text-center">
+            Cambiar Contraseña
+        </h3>
+        <form [formGroup]="cambiarPassword" (ngSubmit)="guardarPassword()">
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Contraseña Anterior"
+                    formControlName="lastPassword">
+                <span class="text-danger ml-3"
+                    *ngIf="cambiarPassword.get('lastPassword')?.hasError('required') && cambiarPassword.get('lastPassword')?.touched">
+                    La contraseña <strong>es requerida</strong>
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Nueva Contraseña"
+                    formControlName="newPassword">
+                <span class="text-danger ml-3"
+                    *ngIf="cambiarPassword.get('newPassword')?.hasError('required') && cambiarPassword.get('newPassword')?.touched">
+                    La nueva contraseña <strong>es requerida</strong>
+                </span>
+                <span class="text-danger ml-3" *ngIf="cambiarPassword.get('newPassword')?.hasError('minlength')">
+                    La contraseña debe tener mínimo <strong>4 caracteres</strong>
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Repetir Contraseña"
+                    formControlName="confirmPassword">
+                <span class="text-danger ml-3"
+                *ngIf="cambiarPassword.hasError('notSame')">
+                Las contraseñas <strong>no coinciden</strong>
+                </span>
+            </div>
+            <div class="col text-center">
+                <button class="btn btn-primary mr-2 btn-acep" [disabled]="cambiarPassword.invalid">Aceptar</button>
+                <button class="btn btn-secondary" routerLink="../">Volver</button>
+            </div>
+        </form>
+    </div>
+
