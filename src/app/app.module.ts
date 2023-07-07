@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 // Modulos
 import { AppRoutingModule } from './app-routing.module';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -17,6 +17,8 @@ import { LoginComponent } from './component/inicio/login/login.component';
 import { RegisterComponent } from './component/inicio/register/register.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { NavbarComponent } from './component/dashboard/navbar/navbar.component';
+import { LoadingComponent } from './shared/loading/loading.component';
+import { CambiarPaswordComponent } from './component/dashboard/cambiar-pasword/cambiar-pasword.component';
 
 
 
@@ -29,6 +31,8 @@ import { NavbarComponent } from './component/dashboard/navbar/navbar.component';
     RegisterComponent,
     DashboardComponent,
     NavbarComponent,
+    LoadingComponent,
+    CambiarPaswordComponent,
   ],
   imports: [
     BrowserModule,
