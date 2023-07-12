@@ -1,3 +1,4 @@
+import { LoginService } from './../../../services/login.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./cuestionarios.component.css']
 })
 export class CuestionariosComponent {
+  nombreUsuario: string|null;
 
+
+  constructor(private loginService: LoginService) { }
+
+  ngOnInit(): void {
+    this.getNombreUsuario();
+  }
+
+  getNombreUsuario(): void {
+    this.nombreUsuario = this.loginService.getNombreUsuario();
+  }
+
+  removeLocalStorage(): void {
+    localStorage.removeItem('nombreUsuario');
+  }
 }
