@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/enviroments/enviroment';
 import { Observable } from 'rxjs';
+import { JwtHelperService, JwtModule } from "@auth0/angular-jwt";
 
 @Injectable({
   providedIn: 'root'
@@ -20,14 +21,22 @@ export class LoginService {
   }
 
   setLocalStorage(data: string): void {
-    localStorage.setItem('nombreUsuario', data);
+    localStorage.setItem('token', data);
   }
 
-  getNombreUsuario(): string |null{
+  getNombreUsuario(): string|null {
     return localStorage.getItem('nombreUsuario');
   }
 
+
+  // Método con error
+  /* getTokenDecoded(): any {
+    const helper = new JwtHelperService();
+    const decodedToken = helper.decodeToken('(token: string): any');
+    return decodedToken;
+  } */
+
   removeLocalStorage(): void{
-    localStorage.removeItem('nombreUsuario');
+    localStorage.removeItem('token');
   }
 }

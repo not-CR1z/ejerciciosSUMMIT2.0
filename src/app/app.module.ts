@@ -19,6 +19,10 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { NavbarComponent } from './component/dashboard/navbar/navbar.component';
 import { LoadingComponent } from './shared/loading/loading.component';
 import { CambiarPaswordComponent } from './component/dashboard/cambiar-pasword/cambiar-pasword.component';
+import { NuevoCuestionarioComponent } from './component/dashboard/cuestionarios/nuevo-cuestionario/nuevo-cuestionario.component';
+import { PasoUnoComponent } from './component/dashboard/cuestionarios/nuevo-cuestionario/paso-uno/paso-uno.component';
+import { PasoDosComponent } from './component/dashboard/cuestionarios/nuevo-cuestionario/paso-dos/paso-dos.component';
+import { NuevaPreguntaComponent } from './component/dashboard/cuestionarios/nuevo-cuestionario/paso-dos/nueva-pregunta/nueva-pregunta.component';
 
 
 
@@ -33,6 +37,10 @@ import { CambiarPaswordComponent } from './component/dashboard/cambiar-pasword/c
     NavbarComponent,
     LoadingComponent,
     CambiarPaswordComponent,
+    NuevoCuestionarioComponent,
+    PasoUnoComponent,
+    PasoDosComponent,
+    NuevaPreguntaComponent,
   ],
   imports: [
     BrowserModule,
