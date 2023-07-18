@@ -7,5 +7,6 @@ export class Respuesta{
         this.id = id;
         this.descripcion = descripcion;
         this.esCorrecta = esCorrecta;
+        this.esCorrecta = esCorrecta;
     }
 }
