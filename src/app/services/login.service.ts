@@ -24,17 +24,17 @@ export class LoginService {
     localStorage.setItem('token', data);
   }
 
-  getNombreUsuario(): string|null {
+/*   getNombreUsuario(): string|null {
     return localStorage.getItem('nombreUsuario');
-  }
+  } */
 
 
   // Método con error
-  /* getTokenDecoded(): any {
+  getTokenDecoded(): any {
     const helper = new JwtHelperService();
     const decodedToken = helper.decodeToken('(token: string): any');
     return decodedToken;
-  } */
+  }
 
   removeLocalStorage(): void{
     localStorage.removeItem('token');

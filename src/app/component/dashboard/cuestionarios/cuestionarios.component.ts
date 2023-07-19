@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./cuestionarios.component.css']
 })
 export class CuestionariosComponent {
-  nombreUsuario: string|null;
+  nombreUsuario: string;
 
 
   constructor(private loginService: LoginService) { }
@@ -17,10 +17,10 @@ export class CuestionariosComponent {
   }
 
   getNombreUsuario(): void {
-    this.nombreUsuario = this.loginService.getNombreUsuario();
+    this.nombreUsuario = this.loginService.getTokenDecoded();
   }
 
   removeLocalStorage(): void {
-    localStorage.removeItem('nombreUsuario');
+    localStorage.removeItem('token');
   }
 }

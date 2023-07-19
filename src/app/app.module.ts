@@ -7,7 +7,11 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+
+// Interceptors
+import { AddTokenInterceptor } from './helpers/add-token.interceptor';
+
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -24,7 +28,6 @@ import { PasoUnoComponent } from './component/dashboard/cuestionarios/nuevo-cues
 import { PasoDosComponent } from './component/dashboard/cuestionarios/nuevo-cuestionario/paso-dos/paso-dos.component';
 import { NuevaPreguntaComponent } from './component/dashboard/cuestionarios/nuevo-cuestionario/paso-dos/nueva-pregunta/nueva-pregunta.component';
 import { CuestionariosComponent } from './component/dashboard/cuestionarios/cuestionarios.component';
-
 
 
 @NgModule({
@@ -53,7 +56,7 @@ import { CuestionariosComponent } from './component/dashboard/cuestionarios/cues
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
